@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<script>
+		var div=document.getElementsByTagName("div")[0];
+		setInterval(getDao,1000)
+		function getDao(){
+			var date=new Date();
+			var date1=new Date("2019/3/20 11:00:00");
+			var time=date1.getTime()-date.getTime();
+			var miaoshu=time/1000;
+			var day=parseInt(miaoshu/3600/24);
+			var hour=parseInt(miaoshu/3600%24);
+			var fenz=miaoshu-day*24*3600-hour*3600;
+			var min=parseInt(fenz/60);
+			var s=parseInt(fenz%60);
+			div.innerHTML="倒计时"+day+"天"+hour+"分钟"+min+"分钟"+s+"秒"
+		}
+		</script>
+	</body>
+</html>

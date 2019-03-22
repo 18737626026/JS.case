@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				position: fixed;
+				top: 30px;
+			}
+			img:nth-child[0]{
+				left: 0;
+			}
+			img:nth-child[1]{
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/1.gif" />
+		<img src="img/2.gif" />
+		<div>123</div>
+		<script>
+			var img=document.getElementsByTagName("img");
+			setTimeout(function(){
+				img[0].style.display="none"
+				img[1].style.display="none"
+			},3000)
+		</script>
+	</body>
+</html>

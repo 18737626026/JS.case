@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 600px;
+				height: 200px;
+				border: 1px solid black;
+				overflow: hidden;
+				margin: 100px auto;
+				position: relative;
+			}
+			
+			.box.list{
+				position: absolute;
+				top: 0;
+				left: 0;
+				float: left;
+			}
+			 img{
+				float: left;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			 <div class="list">
+				<img src="student/images/01.jpg" />
+				<img src="student/images/02.jpg" />
+				<img src="student/images/02.jpg" />
+				<img src="student/images/03.jpg" />
+			</div>
+			
+		 </div>
+		<script>
+			var box=document.getElementsByClassName("box")[0];
+			var list=document.getElementsByTagName("list")[0];
+			var num=0;
+			box.onmouseover=function(){
+				var timer=setInterval(function(){
+					if (num<-1200) {
+						num=0;
+						
+					} else{
+						num--;
+
+					}
+//					list.style.left=num+"px";
+				},30)
+			}
+
+			
+			
+		</script>
+	</body>
+</html>

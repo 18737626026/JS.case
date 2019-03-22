@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+				text-decoration: none;
+			}
+			.head{
+				width: 100%;
+				height:50px ;
+				background-color: plum;
+				text-align: center;
+				line-height: 50px;
+			}
+			.container {
+				width: 1100px;
+				height: 50px;
+				margin: 0px auto;
+				background-color:cornflowerblue;
+				
+			}
+			.container a{
+				float: left;
+				width: 200px;
+				height: 50px;
+				color: whitesmoke;
+				margin-left: 10px;
+			}
+			.container a.active{
+				background-color: #DDA0DD;
+				color: #3F3F3F;
+			}
+			.container a:hover{
+				background-color: #DDA0DD;
+				color: #3F3F3F;
+			}
+			.uls{
+				width: 100%;
+				height: 100px;
+				background-color: darkmagenta;
+			}
+			.item{
+				width: 100%;
+				height: 100px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<div class="container">
+				<a href="" class="active">首页</a>
+				<a href="">首页</a>
+				<a href="">首页</a>
+				<a href="">首页</a>
+				<a href="">首页</a>
+			</div>
+		</div>
+		<div class="uls">
+			<div class="item" style="display:block;">11111111</div>
+			<div class="item">222222222</div>
+			<div class="item">333333333</div>
+			<div class="item">444444444</div>
+			<div class="item">555555555</div>
+		</div>	
+			<script>
+				window.onload=function(){
+					var aa=document.getElementsByTagName("a");
+					var items=document.getElementsByClassName("item");
+					for (var i=0;i<aa.length;i++) {
+						(function(i){
+							 aa[i].onclick=function(){
+								for (var j=0;j<aa.length;j++) {
+								aa[j].className=""
+								items[j].style.display="none";
+								}
+							aa[i].className="active"
+							items[i].style.display="block";
+							}
+						})(i)
+					}
+					
+				}
+			</script>
+		</div>
+	</body>
+</html>

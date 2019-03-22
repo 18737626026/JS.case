@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			div{
+				width: 80px;
+				height: 80px;
+				background-color: red;
+				top: 20px;
+				position: absolute;
+			
+				
+			}
+		</style>
+	</head>
+	
+	<body>
+		<button>按钮</button>
+		<div></div>
+		<script>
+//			var btn=document.getElementsByTagName("button")[0];
+//			var div=document.getElementsByTagName("div")[0];
+//			var num=0;
+//			btn.onclick=function(){
+//				var timer=setInterval(function(){
+//					if(num<400){
+//						num++;
+//						div.style.left=num+"px";
+//					}else{
+//						clearInterval(timer);
+//					}
+//				},30)
+//			}
+			//缓慢
+			var btn=document.getElementsByTagName("button")[0];
+			var div=document.getElementsByTagName("div")[0];
+			var num=0;
+			var target=400;
+			btn.onclick=function(){
+			setInterval(function(){
+				num=num+(target-num)/10;
+				div.style.left=num+"px";
+			},30)
+		}
+		</script>
+	</body>
+</html>

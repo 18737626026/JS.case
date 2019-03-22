@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="1.js"></script>
+		<style>
+			label{
+				vertical-align: top;
+				
+			}
+			textarea{
+				width: 100px;
+				height: 80px;
+			
+			}
+			button{
+					vertical-align: top;
+			}
+			div{
+				width: 400px;
+				height: 400px;
+				background-color: gray;
+				border: 1px solid gray;
+				overflow: auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+			<label>xm：</label>
+			<textarea name="message" rows="" cols=""></textarea>
+			<button>提交</button>
+			<div></div>
+			<script>
+				var btn=document.getElementsByTagName("button")[0];
+				var div=document.getElementsByTagName("div")[0];
+			    btn.onclick=function(){
+			    	var val=document.getElementsByTagName("textarea")[0].value;
+			    	div.innerHTML +="xm:"+val+"<br/>";
+			    	document.getElementsByTagName("textarea")[0].value="";
+			    }
+			</script>
+	</body>
+	  
+</html>

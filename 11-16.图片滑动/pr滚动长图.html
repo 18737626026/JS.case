@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 500px;
+				height: 400px;
+				overflow: hidden;
+				margin: 100px auto;
+				position: relative;
+			}
+			.box div{
+				width: 100%;
+				height: 200px;
+				position: absolute;
+				left: 0px;
+			}
+			.box div.up{
+				top: 0px;
+			}
+			.box div.down{
+				bottom: 0px;
+			}
+			img{
+				float: left;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<img src="../10.五秒自动关闭广告/img/mi.png" />
+			<div class="item up"></div>
+			<div class="item down"></div>
+			<script>
+				var item=document.getElementsByClassName("item");
+				var img=document.getElementsByTagName("img")[0];
+				var num=0;
+				var timer=null;
+				item[0].onmouseover=function(){
+//					clearInterval(timer);
+					 timer=setInterval(function(){
+						if (num>-1070) {
+							num--;
+							img.style.top=num+"px";
+						} else{
+							clearInterval(timer);
+						}
+					},30)
+				}
+				
+				item[1].onmouseover=function(){
+//					clearInterval(timer);
+					
+					 timer=setInterval(function(){
+						if (num<0) {
+							num++;
+							img.style.top=num+"px";
+						} else{
+							clearInterval(timer);
+						}
+						
+					},30)
+				}
+				item[0].onmouseout=function(){
+					clearInterval(timer);
+				}
+				item[1].onmouseout=function(){
+					clearInterval(timer);
+				}
+			</script>
+		</div>
+	</body>
+
+</html>
